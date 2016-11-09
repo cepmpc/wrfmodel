@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+    <title>WRFmodel</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Edistado por Jorge Bravo-->
+    <!-- Esto de de JSAnimation Python se paso a la carpeta: js en el archivo JSAnim_py.js-->
+    <script src="js/JSAnim_py.js"></script>
+    <!-- Esto de de JSAnimation Python se paso a la carpeta: css en el archivo JSAnimation.css-->
+    <!--  -->
+    <link rel="stylesheet" href="css/jsAnimation.css">
+</head>
+
+
+<body>
+
+    <div class="container">
+        <h2>Modelo WRF </h2>
+        <ul class="nav nav-pills">
+            <li class="active"><a data-toggle="pill" href="#home">Inicio</a></li>
+            <li><a data-toggle="pill" href="#menu1">Temperatura</a></li>
+            <li><a data-toggle="pill" href="#menu2">Precipitación</a></li>
+            <li><a data-toggle="pill" href="#menu3">Viento</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+                <h3>CEPM</h3>
+                <p>El Centro de Estudios y Pronósticos Meteorológicos, inicia pruebas de la operación del modelo WRF para la entidad veracruzana.</p>
+                <p>En esta primera etapa se desplegarán mapas del pronóstico de las variables <strong>Temperatura a 2m de la superficie</strong>, <strong>Precipitación horaria</strong> y <strong>velocidad y dirección del Viento</strong> para un plazo 48 horas.</p>
+                <p>El modelo se actualiza automaticamente una vez al día.</p>
+            </div>
+            <div id="menu1" class="tab-pane fade">
+                <br>
+                <p>Temperatura a 2m en °C</p>
+
+                <div class="animation" align="center">
+                    <input id="anim_frame_slider1" type="range" style="width:350px" name="points" min="0" max="1" step="1" value="0" onchange="anim.set_frame(parseInt(this.value));"></input>
+                    <br>
+                    <form action="#n" name="loop_select1" class="anim_control">
+                        <input type="radio" name="state" value="once"> Once </input>
+                        <input type="radio" name="state" value="loop" checked> Loop </input>
+                        <input type="radio" name="state" value="reflect"> Reflect </input>
+                    </form>
+                    <br>
+                    <button onclick="anim1.slower()">&#8211;</button>
+                    <button onclick="anim1.first_frame()"><img src="icons/first.png"></button>
+                    <button onclick="anim1.previous_frame()"><img src="icons/prev.png"></button>
+                    <button onclick="anim1.reverse_animation()"><img src="icons/reverse.png"></button>
+                    <button onclick="anim1.pause_animation()"><img src="icons/pause.png"></button>
+                    <button onclick="anim1.play_animation()"><img src="icons/play.png"></button>
+                    <button onclick="anim1.next_frame()"><img src="icons/next.png"></button>
+                    <button onclick="anim1.last_frame()"><img src="icons/last.png"></button>
+                    <button onclick="anim1.faster()">+</button>
+                    <br>
+                    <img class="img-responsive" id="anim_img1">
+                </div>
+
+
+                <script language="javascript">
+                    /* Instantiate the Animation class. */
+                    /* The IDs given should match those used in the template above. */
+                    var img_id = "anim_img1";
+                    var slider_id = "anim_frame_slider1";
+                    var loop_select_id = "loop_select1";
+                    var frames = new Array(48);
+                    var folder = "TEMP"
+                    for (var i = 0; i < 48; i++) {
+                        /* frames[i] =  "frames/frame" + ("00" + (i + 1)).slice(-3) + ".png"; */
+                        frames[i] = "frames/" + folder + "/img_" + ("0" + (i + 0)).slice(-2) + ".png";
+                    }
+                    /* Name of 'anim' variable should be unique, and match what's specified
+                       in the template above */
+                    anim1 = new Animation(frames, img_id, slider_id, loop_select_id);
+                </script>
+
+
+
+            </div>
+            <div id="menu2" class="tab-pane fade">
+                <br>
+                <p>Precipitación cada hora en mm</p>
+
+                <div class="animation" align="center">
+                    <input id="anim_frame_slider2" type="range" style="width:350px" name="points" min="0" max="1" step="1" value="0" onchange="anim.set_frame(parseInt(this.value));"></input>
+                    <br>
+                    <form action="#n" name="loop_select2" class="anim_control">
+                        <input type="radio" name="state" value="once"> Once </input>
+                        <input type="radio" name="state" value="loop" checked> Loop </input>
+                        <input type="radio" name="state" value="reflect"> Reflect </input>
+                    </form>
+                    <br>
+                    <button onclick="anim2.slower()">&#8211;</button>
+                    <button onclick="anim2.first_frame()"><img src="icons/first.png"></button>
+                    <button onclick="anim2.previous_frame()"><img src="icons/prev.png"></button>
+                    <button onclick="anim2.reverse_animation()"><img src="icons/reverse.png"></button>
+                    <button onclick="anim2.pause_animation()"><img src="icons/pause.png"></button>
+                    <button onclick="anim2.play_animation()"><img src="icons/play.png"></button>
+                    <button onclick="anim2.next_frame()"><img src="icons/next.png"></button>
+                    <button onclick="anim2.last_frame()"><img src="icons/last.png"></button>
+                    <button onclick="anim2.faster()">+</button>
+                    <br>
+                    <img class="img-responsive" id="anim_img2">
+                </div>
+
+                <script language="javascript">
+                    /* Instantiate the Animation class. */
+                    /* The IDs given should match those used in the template above. */
+                    var img_id = "anim_img2";
+                    var slider_id = "anim_frame_slider2";
+                    var loop_select_id = "loop_select2";
+                    var frames = new Array(48);
+                    var folder = "PREC"
+                    for (var i = 0; i < 48; i++) {
+                        /* frames[i] =  "frames/frame" + ("00" + (i + 1)).slice(-3) + ".png"; */
+                        frames[i] = "frames/" + folder + "/img_" + ("0" + (i + 0)).slice(-2) + ".png";
+                    }
+                    /* Name of 'anim' variable should be unique, and match what's specified
+                       in the template above */
+                    anim2 = new Animation(frames, img_id, slider_id, loop_select_id);
+                </script>
+
+            </div>
+            <div id="menu3" class="tab-pane fade">
+                <br>
+                <p>Dirección y velocidad del viento en nudos</p>
+
+                <div class="animation" align="center">
+                    <input id="anim_frame_slider3" type="range" style="width:350px" name="points" min="0" max="1" step="1" value="0" onchange="anim.set_frame(parseInt(this.value));"></input>
+                    <br>
+                    <form action="#n" name="loop_select3" class="anim_control">
+                        <input type="radio" name="state" value="once"> Once </input>
+                        <input type="radio" name="state" value="loop" checked> Loop </input>
+                        <input type="radio" name="state" value="reflect"> Reflect </input>
+                    </form>
+                    <br>
+                    <button onclick="anim3.slower()">&#8211;</button>
+                    <button onclick="anim3.first_frame()"><img src="icons/first.png"></button>
+                    <button onclick="anim3.previous_frame()"><img src="icons/prev.png"></button>
+                    <button onclick="anim3.reverse_animation()"><img src="icons/reverse.png"></button>
+                    <button onclick="anim3.pause_animation()"><img src="icons/pause.png"></button>
+                    <button onclick="anim3.play_animation()"><img src="icons/play.png"></button>
+                    <button onclick="anim3.next_frame()"><img src="icons/next.png"></button>
+                    <button onclick="anim3.last_frame()"><img src="icons/last.png"></button>
+                    <button onclick="anim3.faster()">+</button>
+                    <br>
+                    <img class="img-responsive" id="anim_img3">
+                </div>
+
+                <script language="javascript">
+                    /* Instantiate the Animation class. */
+                    /* The IDs given should match those used in the template above. */
+                    var img_id = "anim_img3";
+                    var slider_id = "anim_frame_slider3";
+                    var loop_select_id = "loop_select3";
+                    var frames = new Array(48);
+                    var folder = "WIND"
+                    for (var i = 0; i < 48; i++) {
+                        /* frames[i] =  "frames/frame" + ("00" + (i + 1)).slice(-3) + ".png"; */
+                        frames[i] = "frames/" + folder + "/img_" + ("0" + (i + 0)).slice(-2) + ".png";
+                    }
+                    /* Name of 'anim' variable should be unique, and match what's specified
+                       in the template above */
+                    anim3 = new Animation(frames, img_id, slider_id, loop_select_id);
+                </script>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+</html>
