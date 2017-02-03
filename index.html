@@ -1,193 +1,164 @@
 <!DOCTYPE html>
-<html lang="es-mx">
+<html lang="en">
 
 <head>
-    <title>WRF CEPM</title>
+    <!-- Theme Made By www.w3schools.com - No Copyright -->
+    <title>CEPM WRF</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <!-- Edistado por Jorge Bravo-->
-    <!-- Esto de de JSAnimation Python se paso a la carpeta: js en el archivo JSAnim_py.js-->
-    <script src="js/JSAnim_py.js"></script>
-    <!-- Esto de de JSAnimation Python se paso a la carpeta: css en el archivo JSAnimation.css-->
-    <!--  -->
-    <link rel="stylesheet" href="css/jsAnimation.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
 </head>
 
+<body id="CEMPpage" data-spy="scroll" data-target=".navbar" data-offset="50">
 
-<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                <a class="navbar-brand" href="index.html">CEPM</a>
+            </div>
 
+        </div>
+    </nav>
+    <br>
+    <!-- Container (The Band Section) -->
     <div class="container">
-        <h2>Modelo WRF </h2>
-        <ul class="nav nav-pills">
-            <li class="active"><a data-toggle="pill" href="#home">Inicio</a></li>
-            <li><a data-toggle="pill" href="#menu1">Temperatura</a></li>
-            <li><a data-toggle="pill" href="#menu2">Precipitación</a></li>
-            <li><a data-toggle="pill" href="#menu3">Viento</a></li>
-        </ul>
-
-        <div class="tab-content">
-            <div id="home" class="tab-pane fade in active">
-                <h3>CEPM</h3>
-
-                <a href="http://www.veracruz.gob.mx/proteccioncivil/servicio/boletin-meteorologico/">
-                    <img src="http://www.veracruz.gob.mx/proteccioncivil/files/2011/08/PC.jpg" alt="SPCVer" style="float:left;">
-                </a>
-
-
-                <p>El <strong> Centro de Estudios y Pronósticos Meteorológicos</strong> de la <strong>Secretaría de Protección Civil</strong> del <strong>Estado de Veracruz</strong>, inicia pruebas de la operación del modelo WRF para la entidad veracruzana.</p>
-                <p>En esta primera etapa se desplegarán mapas del pronóstico de las variables <strong>Temperatura a 2m de la superficie</strong>, <strong>Precipitación horaria</strong> y <strong>velocidad y dirección del Viento</strong> para un plazo 48 horas.</p>
-                <p>El modelo se actualiza automaticamente una vez al día.</p>
-                <p> --- </p>
-                <p>Dudas y comentarios
-                    <br> <a href="mailto:cepm.pc@gmail.com">CEPM</a> - Centro de Estudios y Pronósticos Meteorológicos
-                    <br> <a href="mailto:jh.herk@gmail.com">JorgeB</a> - Jorge Humberto Bravo Méndez</p>
+        <div class="btn-group btn-group-justified">
+            <!-- Boton 1: es para la Descripción-->
+            <a href="iframe_WRF_index.html" target="search_iframe" style="background:#dddddd" class="btn btn-default" role="button">INICIO</a>
+            <!-- Grupo Boton 2: es para la Temperatura-->
+            <div class="btn-group">
+                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" title="Temperatura">Temp<span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-header">Superficie</li>
+                    <li><a href="iframe_WRF_TEMP.html" target="search_iframe">Temp2m <i class="fa fa-check" style="color:blue"></i></a></li>
+                    <li class="disabled"><a href="#">DewPoint <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Niveles</li>
+                    <li class="disabled"><a href="#">1000 mb <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="disabled"><a href="#">850 mb <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="disabled"><a href="#">500 mb <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="disabled"><a href="#">250 mb <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="divider"></li>
+                </ul>
             </div>
-            <div id="menu1" class="tab-pane fade">
-                <br>
-                <p>Temperatura a 2m en °C</p>
-
-                <div class="animation" align="center">
-                    <input id="anim_frame_slider1" type="range" style="width:350px" name="points" min="0" max="1" step="1" value="0" onchange="anim.set_frame(parseInt(this.value));"></input>
-                    <br>
-                    <form action="#n" name="loop_select1" class="anim_control">
-                        <input type="radio" name="state" value="once"> Once </input>
-                        <input type="radio" name="state" value="loop" checked> Loop </input>
-                        <input type="radio" name="state" value="reflect"> Reflect </input>
-                    </form>
-                    <br>
-                    <button onclick="anim1.slower()">&#8211;</button>
-                    <button onclick="anim1.first_frame()"><img src="icons/first.png"></button>
-                    <button onclick="anim1.previous_frame()"><img src="icons/prev.png"></button>
-                    <button onclick="anim1.reverse_animation()"><img src="icons/reverse.png"></button>
-                    <button onclick="anim1.pause_animation()"><img src="icons/pause.png"></button>
-                    <button onclick="anim1.play_animation()"><img src="icons/play.png"></button>
-                    <button onclick="anim1.next_frame()"><img src="icons/next.png"></button>
-                    <button onclick="anim1.last_frame()"><img src="icons/last.png"></button>
-                    <button onclick="anim1.faster()">+</button>
-                    <br>
-                    <img class="img-responsive" id="anim_img1">
-                </div>
-
-
-                <script language="javascript">
-                    /* Instantiate the Animation class. */
-                    /* The IDs given should match those used in the template above. */
-                    var img_id = "anim_img1";
-                    var slider_id = "anim_frame_slider1";
-                    var loop_select_id = "loop_select1";
-                    /*
-                    var frames = new Array(48);
-                    var folder = "TEMP"
-                    for (var i = 0; i < 48; i++) {
-
-                        frames[i] = "frames/" + folder + "/img_" + ("0" + (i + 0)).slice(-2) + ".png";
-                    }*/
-                    /* Name of 'anim' variable should be unique, and match what's specified
-                       in the template above */
-                    anim1 = new Animation(framesTEMP, img_id, slider_id, loop_select_id);
-                </script>
-
-
-
+            <!-- Grupo Boton 3: es para la Precipitacion-->
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" title="Precipitación">Prec<span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-header">Integrado</li>
+                    <li><a href="iframe_WRF_PREC.html" target="search_iframe">Cada hora <i class="fa fa-check" style="color:blue"></i></a></li>
+                    <li class="disabled"><a href="#">Acumulada <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Reflectividad</li>
+                    <li><a href="iframe_WRF_MDBZ.html" target="search_iframe">dBz <i class="fa fa-check" style="color:blue"></i></a></li>
+                    <li class="divider"></li>
+                </ul>
             </div>
-            <div id="menu2" class="tab-pane fade">
-                <br>
-                <p>Precipitación cada hora en mm</p>
-
-                <div class="animation" align="center">
-                    <input id="anim_frame_slider2" type="range" style="width:350px" name="points" min="0" max="1" step="1" value="0" onchange="anim.set_frame(parseInt(this.value));"></input>
-                    <br>
-                    <form action="#n" name="loop_select2" class="anim_control">
-                        <input type="radio" name="state" value="once"> Once </input>
-                        <input type="radio" name="state" value="loop" checked> Loop </input>
-                        <input type="radio" name="state" value="reflect"> Reflect </input>
-                    </form>
-                    <br>
-                    <button onclick="anim2.slower()">&#8211;</button>
-                    <button onclick="anim2.first_frame()"><img src="icons/first.png"></button>
-                    <button onclick="anim2.previous_frame()"><img src="icons/prev.png"></button>
-                    <button onclick="anim2.reverse_animation()"><img src="icons/reverse.png"></button>
-                    <button onclick="anim2.pause_animation()"><img src="icons/pause.png"></button>
-                    <button onclick="anim2.play_animation()"><img src="icons/play.png"></button>
-                    <button onclick="anim2.next_frame()"><img src="icons/next.png"></button>
-                    <button onclick="anim2.last_frame()"><img src="icons/last.png"></button>
-                    <button onclick="anim2.faster()">+</button>
-                    <br>
-                    <img class="img-responsive" id="anim_img2">
-                </div>
-
-                <script language="javascript">
-                    /* Instantiate the Animation class. */
-                    /* The IDs given should match those used in the template above. */
-                    var img_id = "anim_img2";
-                    var slider_id = "anim_frame_slider2";
-                    var loop_select_id = "loop_select2";
-                    /*
-                    var frames = new Array(48);
-                    var folder = "PREC"
-                    for (var i = 0; i < 48; i++) {
-
-                        frames[i] = "frames/" + folder + "/img_" + ("0" + (i + 0)).slice(-2) + ".png";
-                    } */
-                    /* Name of 'anim' variable should be unique, and match what's specified
-                       in the template above */
-                    anim2 = new Animation(framesPREC, img_id, slider_id, loop_select_id);
-                </script>
-
+            <!-- Grupo Boton 4: -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Viento<span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-header">Superficie</li>
+                    <li><a href="iframe_WRF_WIND.html" target="search_iframe">Viento2m <i class="fa fa-check" style="color:blue"></i></a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Niveles</li>
+                    <li class="disabled"><a href="#">1000 mb <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="disabled"><a href="#">850 mb <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="disabled"><a href="#">500 mb <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="disabled"><a href="#">250 mb <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="divider"></li>
+                </ul>
             </div>
-            <div id="menu3" class="tab-pane fade">
-                <br>
-                <p>Dirección y velocidad del viento en Km/h, las barbas de viento en nudos</p>
-
-                <div class="animation" align="center">
-                    <input id="anim_frame_slider3" type="range" style="width:350px" name="points" min="0" max="1" step="1" value="0" onchange="anim.set_frame(parseInt(this.value));"></input>
-                    <br>
-                    <form action="#n" name="loop_select3" class="anim_control">
-                        <input type="radio" name="state" value="once"> Once </input>
-                        <input type="radio" name="state" value="loop" checked> Loop </input>
-                        <input type="radio" name="state" value="reflect"> Reflect </input>
-                    </form>
-                    <br>
-                    <button onclick="anim3.slower()">&#8211;</button>
-                    <button onclick="anim3.first_frame()"><img src="icons/first.png"></button>
-                    <button onclick="anim3.previous_frame()"><img src="icons/prev.png"></button>
-                    <button onclick="anim3.reverse_animation()"><img src="icons/reverse.png"></button>
-                    <button onclick="anim3.pause_animation()"><img src="icons/pause.png"></button>
-                    <button onclick="anim3.play_animation()"><img src="icons/play.png"></button>
-                    <button onclick="anim3.next_frame()"><img src="icons/next.png"></button>
-                    <button onclick="anim3.last_frame()"><img src="icons/last.png"></button>
-                    <button onclick="anim3.faster()">+</button>
-                    <br>
-                    <img class="img-responsive" id="anim_img3">
-                </div>
-
-                <script language="javascript">
-                    /* Instantiate the Animation class. */
-                    /* The IDs given should match those used in the template above. */
-                    var img_id = "anim_img3";
-                    var slider_id = "anim_frame_slider3";
-                    var loop_select_id = "loop_select3";
-                    /*
-                    var frames = new Array(48);
-                    var folder = "WIND"
-                    for (var i = 0; i < 48; i++) {
-
-                        frames[i] = "frames/" + folder + "/img_" + ("0" + (i + 0)).slice(-2) + ".png";
-                    }*/
-                    /* Name of 'anim' variable should be unique, and match what's specified
-                       in the template above */
-                    anim3 = new Animation(framesWIND, img_id, slider_id, loop_select_id);
-                </script>
+            <!-- Grupo Boton 5: -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">Indices<span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-header">--</li>
+                    <li class="disabled"><a href="#">Radiacion <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">--</li>
+                    <li class="disabled"><a href="#">---</a></li>
+                    <li class="disabled"><a href="#">---</a></li>
+                    <li class="disabled"><a href="#">---</a></li>
+                    <li class="disabled"><a href="#">---</a></li>
+                    <li class="divider"></li>
+                </ul>
+            </div>
+            <!-- Grupo Boton 6: -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" title="Meteogramas">Meteogr<span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-header">Observatorios</li>
+                    <li class="disabled"><a href="#">Tuxpam <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="disabled"><a href="#">Xalapa <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="disabled"><a href="#">Veracruz <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="disabled"><a href="#">Orizaba <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="disabled"><a href="#">Coatzacoalcos <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Ciudad Referencia</li>
+                    <li class="disabled"><a href="#">Panuco <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="disabled"><a href="#">Chicontepec <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="disabled"><a href="#">Huayacocotla <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="disabled"><a href="#">Poza Rica <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="disabled"><a href="#">Tecolutla <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="disabled"><a href="#">Mtz de la Tore <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="disabled"><a href="#">Perote <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="disabled"><a href="#">Zongolica <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="disabled"><a href="#">Alvarado <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="disabled"><a href="#">Angle R. Cabada <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="disabled"><a href="#">Azueta <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="disabled"><a href="#">Las Choapas <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="disabled"><a href="#">Uxpanapa <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="divider"></li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-12 text-justified">
+                <iframe class="embed-responsive-item" src="iframe_WRF_index.html" height="1010px" width="100%" style="border:none;" frameborder="0" allowfullscreen name="search_iframe"></iframe>
             </div>
         </div>
     </div>
 
-</body>
+    <script>
+        function go(loc) {
+            document.getElementById('calendar').src = loc;
+        }
+    </script>
 
+
+
+
+
+    <!-- <iframe src="iframe_WRF_TEMP.html" style="border:none;" height="100%" width="100%" frameborder="0" allowfullscreen></iframe> -->
+    <!-- Footer -->
+    <footer class="text-center">
+        <p>¡Síguenos en nuestras redes sociales!</p>
+        <div align="center">
+            <a target="_blank" href="https://www.facebook.com/cepm.civil">
+                <img src="https://www.facebook.com/images/fb_icon_325x325.png" alt="facebook" style="width:25px;height:25px">
+            </a>
+            <a target="_blank" href="https://twitter.com/spcver">
+                <img src="https://abs.twimg.com/favicons/favicon.ico" alt="twitter" style="width:25px;height:25px;">
+            </a>
+            <a target="_blank" href="http://meteorologiaspcver.blogspot.mx/">
+                <img src="https://www.blogger.com/about/favicon/apple-touch-icon-57x57.png" alt="blogger" style="width:25px;height:25px;">
+            </a>
+        </div>
+    </footer>
+
+</body>
 
 </html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>WRF-TEMP2m</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <!-- Edistado por Jorge Bravo-->
+    <!-- Esto de de JSAnimation Python se paso a la carpeta: js en el archivo JSAnim_py.js-->
+    <script src="js/JSAnim_py.js"></script>
+    <script src="js/anim_vars.js"></script>
+    <!-- Esto de de JSAnimation Python se paso a la carpeta: css en el archivo JSAnimation.css-->
+    <!--  -->
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css">
+    <script src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js"> </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <h3>CEPM</h3>
+                <a href="http://www.veracruz.gob.mx/proteccioncivil/servicio/boletin-meteorologico/">
+                    <img src="http://www.veracruz.gob.mx/proteccioncivil/files/2011/08/PC.jpg" alt="SPCVer" style="float:left;">
+                </a>
+            </div>
+            <div class="col-sm-9 text-justified">
+                <h3 class="text-center">Implementación del WRF</h3>
+                <p class="text-justified">El <strong> Centro de Estudios y Pronósticos Meteorológicos</strong> de la <strong>Secretaría de Protección Civil</strong> del <strong>Estado de Veracruz</strong>, mantiene en operación del modelo <strong>WRF</strong> para la entidad veracruzana.</p>
+                <p class="text-justified"> Se despliegan mapas del pronóstico a un plazo 48 horas de distintas variables entre las que se encuentran, <strong>Temperatura a 2m de la superficie</strong>, <strong>Precipitación horaria</strong>, <strong>velocidad y dirección del Viento</strong> y <strong>reflectividad</strong>, sin embargo se trabaja para anexar una mayor cantidad de variables.
+                Por el momento, las variables que estan disponibles se muestran con <i class="fa fa-check" style="color:blue"></i> y las que no estan disponibles con <i class="fa fa-times" style="color:red"></i></p>
+                <p class="text-justified">El modelo se actualiza automaticamente una vez al día y se puede hacer llegar una notificación via email.</p>
+                <p class="text-justified">Este Sitio Estara en actualizacion.</p>
+
+            </div>
+        </div>
+        <h3 class="text-center">Como contactarnos</h3>
+        <div class="row">
+            <div class="col-md-3">
+                <p><span class="glyphicon glyphicon-map-marker"></span> Xalapa, Ver, Mex</p>
+                <p><span class="glyphicon glyphicon-phone"></span> (+52) 01 228 1.41.45.23</p>
+                <p><span class="glyphicon glyphicon-phone"></span> (+52) 01 228 1.41.45.38</p>
+                <p><span class="glyphicon glyphicon-phone"></span> (+52) 01 228 8.18.68.12</p>
+                <p><span class="glyphicon glyphicon-envelope"></span> cepm.pc@gmail.com</p>
+                <p><span class="glyphicon glyphicon-envelope"></span> jh.herk@gmail.com</p>
+            </div>
+            <div class="col-md-9">
+                <div id="leafletMap" style="width: 100%; height: 400px;"></div>
+            </div>
+        </div>
+        <br>
+        <h3 class="text-center">¿A quién puedes dirigirte?</h3>
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#home">Saúl</a></li>
+            <li><a data-toggle="tab" href="#menu1">Jorge</a></li>
+            <li><a data-toggle="tab" href="#menu2">Federico</a></li>
+            <li><a data-toggle="tab" href="#menu3">Llanos</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+                <img src="http://www.veracruz.gob.mx/proteccioncivil/files/2011/08/PC.jpg" alt="Coord" style="float:left;width:250px;height:96px;">
+                <h2>Dr. Saúl Miranda Alonso</h2>
+                <p>Coordinador del Centro de Estudios y Pronosticos Meteorologicos</p>
+
+            </div>
+            <div id="menu1" class="tab-pane fade">
+                <img src="http://www.veracruz.gob.mx/proteccioncivil/files/2011/08/PC.jpg" alt="InvCli" style="float:left;width:250px;height:96px;">
+                <h2>M.C. Jorge Humberto Bravo Méndez</h2>
+                <p>Investigador del Clima y <b>quien administra este sitio WEB</b></p>
+            </div>
+            <div id="menu2" class="tab-pane fade">
+                <img src="http://www.veracruz.gob.mx/proteccioncivil/files/2011/08/PC.jpg" alt="SubCoo" style="float:left;width:250px;height:96px;">
+                <h2>L.C.A Federico Acevedo Rosas</h2>
+                <p>Subcoordiandos de Pronostico Estacional y Meteorologico</p>
+            </div>
+            <div id="menu3" class="tab-pane fade">
+                <img src="http://www.veracruz.gob.mx/proteccioncivil/files/2011/08/PC.jpg" alt="SubCoo" style="float:left;width:250px;height:96px;">
+                <h2>L.C.A Jose Llanos Arias</h2>
+                <p>Subcoordiandos de Fenosmenos Atmosfericos</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Add leaflet Maps -->
+    <script>
+        var map = L.map('leafletMap').setView([19.514300171573723, -96.91788911819458], 14);
+        mapLink =
+            '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+        L.tileLayer(
+            'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: 'Map data &copy; ' + mapLink,
+                maxZoom: 18,
+            }).addTo(map);
+        var marker = L.marker([19.514300171573723, -96.91788911819458])
+            .addTo(map)
+            .bindPopup("<b>Secretaría de Protección Civil</b><br>Calle 1° de Septiembre No 1<br>Esq. Av. Culturas Veracruzanas<br>Col. Isleta,CP 91090, en Xalapa, Ver, Mex.")
+            .openPopup();
+    </script>
+</body>
+
+</html>
+<!--
+http://stackoverflow.com/questions/2385203/can-you-control-gif-animation-with-javascript
+https://github.com/buzzfeed/libgif-js
+-->
