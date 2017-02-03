@@ -12,25 +12,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-    <link href="css/main.css" rel="stylesheet" type="text/css">
 </head>
 
-<body id="CEMPpage" data-spy="scroll" data-target=".navbar" data-offset="50">
-
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-                <a class="navbar-brand" href="index.html">CEPM</a>
-            </div>
-
-        </div>
-    </nav>
-    <br>
+<body>
+    <div class="jumbotron text-center">
+        <h1>CEPM - SPCVer</h1>
+        <p>Centro de Estudios y Pronósticos Meteorológicos</p>
+        <p>de la Secretaría de Protección Civil</p>
+    </div>
     <!-- Container (The Band Section) -->
     <div class="container">
         <div class="btn-group btn-group-justified">
@@ -41,14 +30,14 @@
                 <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" title="Temperatura">Temp<span class="caret"></span></button>
                 <ul class="dropdown-menu">
                     <li class="dropdown-header">Superficie</li>
-                    <li><a href="iframe_WRF_TEMP.html" target="search_iframe">Temp2m <i class="fa fa-check" style="color:blue"></i></a></li>
-                    <li class="disabled"><a href="#">DewPoint <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li><a href="iframe_WRF_TEMP.html" target="search_iframe">Temp2m <span class="glyphicon glyphicon-ok-circle"  style="color:blue"></span></a></li>
+                    <li class="disabled"><a href="#">DewPoint <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
                     <li class="divider"></li>
                     <li class="dropdown-header">Niveles</li>
-                    <li class="disabled"><a href="#">1000 mb <i class="fa fa-times" style="color:red"></i></a></li>
-                    <li class="disabled"><a href="#">850 mb <i class="fa fa-times" style="color:red"></i></a></li>
-                    <li class="disabled"><a href="#">500 mb <i class="fa fa-times" style="color:red"></i></a></li>
-                    <li class="disabled"><a href="#">250 mb <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="disabled"><a href="#">1000 mb <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">850 mb <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">500 mb <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">250 mb <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
                     <li class="divider"></li>
                 </ul>
             </div>
@@ -57,11 +46,11 @@
                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" title="Precipitación">Prec<span class="caret"></span></button>
                 <ul class="dropdown-menu">
                     <li class="dropdown-header">Integrado</li>
-                    <li><a href="iframe_WRF_PREC.html" target="search_iframe">Cada hora <i class="fa fa-check" style="color:blue"></i></a></li>
-                    <li class="disabled"><a href="#">Acumulada <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li><a href="iframe_WRF_PREC.html" target="search_iframe">Cada hora <span class="glyphicon glyphicon-ok-circle"  style="color:blue"></span></a></li>
+                    <li class="disabled"><a href="#">Acumulada <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
                     <li class="divider"></li>
                     <li class="dropdown-header">Reflectividad</li>
-                    <li><a href="iframe_WRF_MDBZ.html" target="search_iframe">dBz <i class="fa fa-check" style="color:blue"></i></a></li>
+                    <li><a href="iframe_WRF_MDBZ.html" target="search_iframe">dBz <span class="glyphicon glyphicon-ok-circle"  style="color:blue"></span></a></li>
                     <li class="divider"></li>
                 </ul>
             </div>
@@ -70,13 +59,13 @@
                 <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Viento<span class="caret"></span></button>
                 <ul class="dropdown-menu">
                     <li class="dropdown-header">Superficie</li>
-                    <li><a href="iframe_WRF_WIND.html" target="search_iframe">Viento2m <i class="fa fa-check" style="color:blue"></i></a></li>
+                    <li><a href="iframe_WRF_WIND.html" target="search_iframe">Viento2m <span class="glyphicon glyphicon-ok-circle"  style="color:blue"></span></a></li>
                     <li class="divider"></li>
                     <li class="dropdown-header">Niveles</li>
-                    <li class="disabled"><a href="#">1000 mb <i class="fa fa-times" style="color:red"></i></a></li>
-                    <li class="disabled"><a href="#">850 mb <i class="fa fa-times" style="color:red"></i></a></li>
-                    <li class="disabled"><a href="#">500 mb <i class="fa fa-times" style="color:red"></i></a></li>
-                    <li class="disabled"><a href="#">250 mb <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="disabled"><a href="#">1000 mb <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">850 mb <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">500 mb <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">250 mb <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
                     <li class="divider"></li>
                 </ul>
             </div>
@@ -85,7 +74,7 @@
                 <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">Indices<span class="caret"></span></button>
                 <ul class="dropdown-menu">
                     <li class="dropdown-header">--</li>
-                    <li class="disabled"><a href="#">Radiacion <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="disabled"><a href="#">Radiacion <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
                     <li class="divider"></li>
                     <li class="dropdown-header">--</li>
                     <li class="disabled"><a href="#">---</a></li>
@@ -100,26 +89,26 @@
                 <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" title="Meteogramas">Meteogr<span class="caret"></span></button>
                 <ul class="dropdown-menu">
                     <li class="dropdown-header">Observatorios</li>
-                    <li class="disabled"><a href="#">Tuxpam <i class="fa fa-times" style="color:red"></i></a></li>
-                    <li class="disabled"><a href="#">Xalapa <i class="fa fa-times" style="color:red"></i></a></li>
-                    <li class="disabled"><a href="#">Veracruz <i class="fa fa-times" style="color:red"></i></a></li>
-                    <li class="disabled"><a href="#">Orizaba <i class="fa fa-times" style="color:red"></i></a></li>
-                    <li class="disabled"><a href="#">Coatzacoalcos <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="disabled"><a href="#">Tuxpam <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Xalapa <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Veracruz <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Orizaba <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Coatzacoalcos <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
                     <li class="divider"></li>
                     <li class="dropdown-header">Ciudad Referencia</li>
-                    <li class="disabled"><a href="#">Panuco <i class="fa fa-times" style="color:red"></i></a></li>
-                    <li class="disabled"><a href="#">Chicontepec <i class="fa fa-times" style="color:red"></i></a></li>
-                    <li class="disabled"><a href="#">Huayacocotla <i class="fa fa-times" style="color:red"></i></a></li>
-                    <li class="disabled"><a href="#">Poza Rica <i class="fa fa-times" style="color:red"></i></a></li>
-                    <li class="disabled"><a href="#">Tecolutla <i class="fa fa-times" style="color:red"></i></a></li>
-                    <li class="disabled"><a href="#">Mtz de la Tore <i class="fa fa-times" style="color:red"></i></a></li>
-                    <li class="disabled"><a href="#">Perote <i class="fa fa-times" style="color:red"></i></a></li>
-                    <li class="disabled"><a href="#">Zongolica <i class="fa fa-times" style="color:red"></i></a></li>
-                    <li class="disabled"><a href="#">Alvarado <i class="fa fa-times" style="color:red"></i></a></li>
-                    <li class="disabled"><a href="#">Angle R. Cabada <i class="fa fa-times" style="color:red"></i></a></li>
-                    <li class="disabled"><a href="#">Azueta <i class="fa fa-times" style="color:red"></i></a></li>
-                    <li class="disabled"><a href="#">Las Choapas <i class="fa fa-times" style="color:red"></i></a></li>
-                    <li class="disabled"><a href="#">Uxpanapa <i class="fa fa-times" style="color:red"></i></a></li>
+                    <li class="disabled"><a href="#">Panuco <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Chicontepec <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Huayacocotla <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Poza Rica <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Tecolutla <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Mtz de la Tore <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Perote <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Zongolica <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Alvarado <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Angle R. Cabada <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Azueta <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Las Choapas <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Uxpanapa <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
                     <li class="divider"></li>
                 </ul>
             </div>
@@ -144,8 +133,9 @@
 
     <!-- <iframe src="iframe_WRF_TEMP.html" style="border:none;" height="100%" width="100%" frameborder="0" allowfullscreen></iframe> -->
     <!-- Footer -->
-    <footer class="text-center">
+    <footer class="text-center" style="background:#dddddd">
         <p>¡Síguenos en nuestras redes sociales!</p>
+        <br>
         <div align="center">
             <a target="_blank" href="https://www.facebook.com/cepm.civil">
                 <img src="https://www.facebook.com/images/fb_icon_325x325.png" alt="facebook" style="width:25px;height:25px">
@@ -156,7 +146,9 @@
             <a target="_blank" href="http://meteorologiaspcver.blogspot.mx/">
                 <img src="https://www.blogger.com/about/favicon/apple-touch-icon-57x57.png" alt="blogger" style="width:25px;height:25px;">
             </a>
+
         </div>
+        <br>
     </footer>
 
 </body>

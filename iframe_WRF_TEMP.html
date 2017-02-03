@@ -8,14 +8,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <!-- Edistado por Jorge Bravo-->
     <!-- Esto de de JSAnimation Python se paso a la carpeta: js en el archivo JSAnim_py.js https://www.dropbox.com/sh/7dh1uucbepvht6z/AAAqByvoNrZUGKosAPsezXGxa?dl=0-->
     <script src="js/JSAnim_py.js"></script>
     <script src="js/anim_vars.js"></script>
     <!-- Esto de de JSAnimation Python se paso a la carpeta: css en el archivo JSAnimation.css-->
     <!--  -->
-    <link rel="stylesheet" href="css/jsAnimation.css">
 </head>
 
 <body>
@@ -38,15 +36,18 @@
                         </div>
                     </form>
                     <br>
+                    <p>Velocidad de la animación</p>
                     <button type="button" class="btn btn-primary btn-xs btn-responsive" onclick="anim.slower()"><span class="glyphicon glyphicon-minus-sign"></span></button>
+                    <button type="button" class="btn btn-primary btn-xs" onclick="anim.faster()"><span class="glyphicon glyphicon-plus-sign"></span></i></button>
+                    <p>Controles de la animación</p>
                     <button type="button" class="btn btn-primary btn-xs" onclick="anim.first_frame()">       <span class="glyphicon glyphicon-fast-backward"></span></button>
                     <button type="button" class="btn btn-primary btn-xs" onclick="anim.previous_frame()">    <span class="glyphicon glyphicon-step-backward"></span></button>
-                    <button type="button" class="btn btn-primary btn-xs" onclick="anim.reverse_animation()"> <span class="glyphicon glyphicon-play"></span></button>
                     <button type="button" class="btn btn-primary btn-xs" onclick="anim.pause_animation()">   <span class="glyphicon glyphicon-pause"></span></button>
                     <button type="button" class="btn btn-primary btn-xs" onclick="anim.play_animation()">    <span class="glyphicon glyphicon-play"></span></button>
                     <button type="button" class="btn btn-primary btn-xs" onclick="anim.next_frame()">        <span class="glyphicon glyphicon-step-forward"></span></button>
-                    <button type="button" class="btn btn-primary btn-xs" onclick="anim.last_frame()">        <span class="glyphicon glyphicon-fast-forward"></span></i></button>
-                    <button type="button" class="btn btn-primary btn-xs" onclick="anim.faster()"><span class="glyphicon glyphicon-plus-sign"></span></i></button>
+                    <button type="button" class="btn btn-primary btn-xs" onclick="anim.last_frame()">        <span class="glyphicon glyphicon-fast-forward"></span></button>
+                    <p>Animación en retroceso</p>
+                    <button type="button" class="btn btn-primary btn-xs" onclick="anim.reverse_animation()"> <span class="glyphicon glyphicon-play"></span></button>
                 </div>
             </div>
             <div class="col-sm-9">
