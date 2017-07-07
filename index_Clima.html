@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>CEPM WRF</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+  <link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.css" />
+  <script src="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+
+  <div class="topnav" id="myTopnav">
+    <a href="index.html">Inicio</a>
+    <a href="index_WRF.html">WRF</a>
+    <a href="index_Clima.html">Clima</a>
+    <a href="#about">Proximamente</a>
+    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+  </div>
+
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+  </script>
+
+  <div class="jumbotron text-center">
+    <h1>CEPM - SPCVer</h1>
+    <p>Centro de Estudios y Pronósticos Meteorológicos</p>
+    <p>de la Secretaría de Protección Civil</p>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1 class="text-center">Reporte Climatologico</h1>
+        <div class="row">
+          <div class="col-sm-8">
+            <div id="climap" style="width: 100%; height: 600px;	border: 1px solid #ccc;"></div>
+          </div>
+          <div class="col-sm-4">
+            <p>Texto temporal</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" charset="utf-8">
+    // Esta funcion es para leer los datos de observatorios
+    $(document).ready(function() {
+      $.ajax({
+        type: "GET",
+        url: "data/observs.csv",
+        dataType: "text",
+        success: function(data) {
+          DataObs(data)
+        }
+      });
+    });
+    // Esta funcion es para leer los datos de Estaciones
+    $(document).ready(function() {
+      $.ajax({
+        type: "GET",
+        url: "data/estacs.csv",
+        dataType: "text",
+        success: function(data) {
+          DataEst(data)
+        }
+      });
+    });
+
+    var osmLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>',
+      thunLink = '<a href="http://thunderforest.com/">Thunderforest</a>';
+
+    var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      osmAttrib = '&copy; ' + osmLink + ' Contributors',
+      landUrl = 'http://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png',
+      thunAttrib = '&copy; ' + osmLink + ' Contributors & ' + thunLink;
+
+    var osmMap = L.tileLayer(osmUrl, {
+        attribution: osmAttrib
+      }),
+      landMap = L.tileLayer(landUrl, {
+        attribution: thunAttrib
+      });
+
+    var bounds = new L.LatLngBounds(
+      new L.LatLng(16.6436391366575336, -98.6800908947755602),
+      new L.LatLng(22.4714165116575337, -93.6077310225533381));
+    var ObsPlaces = new L.LayerGroup();
+    var EstPlaces = new L.LayerGroup();
+
+    var CEPMLink = '<a href="https://cepmpc.github.io/wrfmodel/">CEPM</a>';
+    var TMAXUrl = 'https://dl.dropboxusercontent.com/s/ztuptl2bb97rubw/mapa_TMAX.png',
+      TMAXAttrib = ' ' + CEPMLink + ' Clima',
+      TMINUrl = 'https://dl.dropboxusercontent.com/s/g80spptl0xd22ay/mapa_TMIN.png',
+      TMINAttrib = ' ' + CEPMLink + ' Clima',
+      PRECUrl = 'https://dl.dropboxusercontent.com/s/nwk3c8cjufsskgm/mapa_PREC.png',
+      PRECAttrib = ' ' + CEPMLink + ' Clima';
+    var CEPMopac = 1.0;
+
+    var TMAXmap = new L.ImageOverlay(TMAXUrl, bounds, {
+        opacity: CEPMopac,
+        interactive: true,
+        attribution: TMAXAttrib
+      }),
+      TMINmap = new L.ImageOverlay(TMINUrl, bounds, {
+        opacity: CEPMopac,
+        interactive: true,
+        attribution: TMINAttrib
+      }),
+      PRECmap = new L.ImageOverlay(PRECUrl, bounds, {
+        opacity: CEPMopac,
+        interactive: true,
+        attribution: PRECAttrib
+      });
+
+    // Asignacion para las leyendas
+    var legendTMAX = L.control({
+      position: 'bottomleft'
+    });
+    var legendTMIN = L.control({
+      position: 'bottomleft'
+    });
+    var legendPREC = L.control({
+      position: 'bottomleft'
+    });
+    // Asignacion para los mapas que se cambiaran
+    var baseLayers = {
+      "Temp Máxima": TMAXmap,
+      "Temp Mínima": TMINmap,
+      "Precipitación": PRECmap,
+    };
+    // Asignacion para los marcadores
+    var overlays = {
+      "Observatorios": ObsPlaces,
+      "Estaciones": EstPlaces,
+    };
+
+    //////////////////////////////////
+
+    var map = L.map('climap', {
+      layers: [TMAXmap, ObsPlaces] // only add one!
+    }).fitBounds(bounds);
+
+    // add TMAX legend 1
+    legendTMAX.onAdd = function(map) {
+      var div = L.DomUtil.create('div', 'info legend');
+      //div.innerHTML += "<iframe src='" + "images/temp_jb.svg" + "' width='300px' height='100px' frameborder='0'></iframe>"
+      div.innerHTML += '<img alt="legend" src="images/temp_jb.png" width="40px" height="500px" frameborder="0" />';
+      return div;
+    };
+    legendTMAX.addTo(map);
+    // add TMIN legend 2
+
+    legendTMIN.onAdd = function(map) {
+      var div = L.DomUtil.create('div', 'info legend');
+      //div.innerHTML += "<iframe src='" + "images/temp_jb.svg" + "' width='300px' height='100px' frameborder='0'></iframe>"
+      div.innerHTML += '<img alt="legend" src="images/temp_jb.png" width="40px" height="500px" frameborder="0" />';
+      return div;
+    };
+    // legendTMIN.addTo(map);
+
+    // add TMIN legend 2
+    legendPREC.onAdd = function(map) {
+      var div = L.DomUtil.create('div', 'info legend');
+      //div.innerHTML += "<iframe src='" + "images/rain.png" + "' width='100' height='300' frameborder='0'></iframe>"
+      div.innerHTML += '<img alt="legend" src="images/rain.png" width="40px" height="500px" frameborder="0" />';
+      return div;
+    };
+    // legendPREC.addTo(map);
+
+    // Se asocia a la funcion que importa datos de observatorios
+    function DataObs(Text) {
+      places = $.csv.toObjects(Text);
+      for (var i = 0; i < places.length; i++) {
+        marker = new L.marker([places[i].LAT, places[i].LON], {
+            title: places[i].ESTACION,
+          })
+          .bindPopup("<b>" + places[i].ESTACION + "</b>")
+          .addTo(ObsPlaces);
+      }
+    };
+    // Se asocia a la funcion que importa datos de Estaciones
+    function DataEst(Text) {
+      places = $.csv.toObjects(Text);
+      for (var i = 0; i < places.length; i++) {
+        marker = new L.marker([places[i].LAT, places[i].LON], {
+            title: places[i].ESTACION,
+          })
+          .bindPopup("<b>" + places[i].ESTACION + "</b><br>TMAX: " + places[i].TMAX + " °C<br>TMIN: " + places[i].TMIN + " °C<br>PREC: " + places[i].PREC + " mm")
+          .addTo(EstPlaces);
+      }
+    };
+
+    var layersControl = new L.Control.Layers(baseLayers, overlays, {
+      collapsed: false
+    });
+    osmMap.addTo(map);
+    map.addControl(layersControl);
+
+    // Add and remove layers
+    map.on('baselayerchange', function(eventLayer) {
+      // Switch to the Permafrost legend...
+      if (eventLayer.name === "Temp Mínima") {
+        map.removeControl(legendTMAX);
+        map.removeControl(legendPREC);
+        legendTMIN.addTo(map);
+      } else if (eventLayer.name === "Temp Máxima") { // Or switch to the treeline legend...
+        map.removeControl(legendTMIN);
+        map.removeControl(legendPREC);
+        legendTMAX.addTo(map);
+      } else if (eventLayer.name === "Precipitación") { // Or switch to the treeline legend...
+        map.removeControl(legendTMAX);
+        map.removeControl(legendTMIN);
+        legendPREC.addTo(map);
+      }
+    });
+  </script>
+  <!-- <iframe src="iframe_WRF_TEMP.html" style="border:none;" height="100%" width="100%" frameborder="0" allowfullscreen></iframe> -->
+  <!-- Footer -->
+  <footer class="text-center" style="background:#dddddd">
+    <br>
+    <p>¡Síguenos en nuestras redes sociales!</p>
+    <br>
+    <div align="center">
+      <a target="_blank" href="https://www.facebook.com/cepm.civil">
+                <img src="https://www.facebook.com/images/fb_icon_325x325.png" alt="facebook" style="width:25px;height:25px">
+            </a>
+      <a target="_blank" href="https://twitter.com/spcver">
+                <img src="https://abs.twimg.com/favicons/favicon.ico" alt="twitter" style="width:25px;height:25px;">
+            </a>
+      <a target="_blank" href="http://meteorologiaspcver.blogspot.mx/">
+                <img src="https://www.blogger.com/about/favicon/apple-touch-icon-57x57.png" alt="blogger" style="width:25px;height:25px;">
+            </a>
+    </div>
+    <br>
+  </footer>
+
+</body>
+
+</html>

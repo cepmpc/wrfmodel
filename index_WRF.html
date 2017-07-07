@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Theme Made By www.w3schools.com - No Copyright -->
+    <title>CEPM WRF</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body>
+
+    <div class="topnav" id="myTopnav">
+      <a href="index.html">Inicio</a>
+      <a href="index_WRF.html">WRF</a>
+      <a href="index_Clima.html">Clima</a>
+      <a href="#about">Proximamente</a>
+      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+    </script>
+    <div class="jumbotron text-center">
+        <h1>CEPM - SPCVer</h1>
+        <p>Centro de Estudios y Pronósticos Meteorológicos</p>
+        <p>de la Secretaría de Protección Civil</p>
+    </div>
+    <!-- Container (The Band Section) -->
+    <div class="container">
+        <div class="btn-group btn-group-justified">
+            <!-- Boton 1: es para la Descripción-->
+            <a href="iframe_WRF_index.html" target="search_iframe" style="background:#dddddd" class="btn btn-default" role="button"><span class="glyphicon glyphicon-home"></span></a>
+            <!-- Grupo Boton 2: es para la Temperatura-->
+            <div class="btn-group">
+                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" title="Temperatura">Temp<span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-header">Superficie</li>
+                    <li><a href="iframe_WRF_TEMP.html" target="search_iframe">Temp2m <span class="glyphicon glyphicon-ok-circle"  style="color:blue"></span></a></li>
+                    <li class="disabled"><a href="#">DewPoint <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Niveles</li>
+                    <li class="disabled"><a href="#">1000 mb <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">850 mb <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">500 mb <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">250 mb <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="divider"></li>
+                </ul>
+            </div>
+            <!-- Grupo Boton 3: es para la Precipitacion-->
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" title="Precipitación">Prec<span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-header">Integrado</li>
+                    <li><a href="iframe_WRF_PREC.html" target="search_iframe">Cada hora <span class="glyphicon glyphicon-ok-circle"  style="color:blue"></span></a></li>
+                    <li><a href="iframe_WRF_PRECA.html" target="search_iframe">Acumulada <span class="glyphicon glyphicon-ok-circle"  style="color:blue"></span></a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Reflectividad</li>
+                    <li><a href="iframe_WRF_MDBZ.html" target="search_iframe">dBz <span class="glyphicon glyphicon-ok-circle"  style="color:blue"></span></a></li>
+                    <li class="divider"></li>
+                </ul>
+            </div>
+            <!-- Grupo Boton 4: -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Viento<span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-header">Superficie</li>
+                    <li><a href="iframe_WRF_WIND.html" target="search_iframe">Viento2m <span class="glyphicon glyphicon-ok-circle"  style="color:blue"></span></a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Niveles</li>
+                    <li class="disabled"><a href="#">1000 mb <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">850 mb <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">500 mb <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">250 mb <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="divider"></li>
+                </ul>
+            </div>
+            <!-- Grupo Boton 5: -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">Otras<span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-header">Radiación</li>
+                    <li class="disabled"><a href="#">Onda Corta <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Onda Larga <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Indices</li>
+                    <li class="disabled"><a href="#">---</a></li>
+                    <li class="disabled"><a href="#">---</a></li>
+                    <li class="disabled"><a href="#">---</a></li>
+                    <li class="disabled"><a href="#">---</a></li>
+                    <li class="divider"></li>
+                </ul>
+            </div>
+            <!-- Grupo Boton 6: -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" title="Meteogramas">Meteogr<span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-header">Observatorios</li>
+                    <li class="disabled"><a href="#">Tuxpam <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Xalapa <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Veracruz <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Orizaba <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Coatzacoalcos <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Ciudad Referencia</li>
+                    <li class="disabled"><a href="#">Panuco <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Chicontepec <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Huayacocotla <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Poza Rica <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Tecolutla <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Mtz de la Tore <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Perote <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Zongolica <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Alvarado <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Angle R. Cabada <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Azueta <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Las Choapas <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="disabled"><a href="#">Uxpanapa <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+                    <li class="divider"></li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-12 text-justified">
+              <!--
+                <iframe class="embed-responsive-item" src="iframe_WRF_index.html" height="1010px" width="100%" style="border:none;" frameborder="0" allowfullscreen name="search_iframe"></iframe>
+                -->
+                <iframe class="embed-responsive-item" src="iframe_WRF_index.html" onload="this.style.height=this.contentDocument.body.scrollHeight +'px';" width="100%" style="border:none;" frameborder="0" allowfullscreen name="search_iframe"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function go(loc) {
+            document.getElementById('calendar').src = loc;
+        }
+    </script>
+    <!-- <iframe src="iframe_WRF_TEMP.html" style="border:none;" height="100%" width="100%" frameborder="0" allowfullscreen></iframe> -->
+    <!-- Footer -->
+    <footer class="text-center" style="background:#dddddd">
+      <br>
+        <p>¡Síguenos en nuestras redes sociales!</p>
+        <br>
+        <div align="center">
+            <a target="_blank" href="https://www.facebook.com/cepm.civil">
+                <img src="https://www.facebook.com/images/fb_icon_325x325.png" alt="facebook" style="width:25px;height:25px">
+            </a>
+            <a target="_blank" href="https://twitter.com/spcver">
+                <img src="https://abs.twimg.com/favicons/favicon.ico" alt="twitter" style="width:25px;height:25px;">
+            </a>
+            <a target="_blank" href="http://meteorologiaspcver.blogspot.mx/">
+                <img src="https://www.blogger.com/about/favicon/apple-touch-icon-57x57.png" alt="blogger" style="width:25px;height:25px;">
+            </a>
+        </div>
+        <br>
+    </footer>
+
+</body>
+
+</html>
