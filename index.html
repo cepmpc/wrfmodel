@@ -18,18 +18,19 @@
 
   <link rel="stylesheet" href="css/main.css" />
   <style>
-    table,
-    th,
-    td {
+    table, th, td {
       border: 1px solid black;
       border-collapse: collapse;
       text-align: center;
     }
 
-    th,
-    td {
+    th, td {
       padding: 1px;
     }
+    img#pc {
+    position: absolute;
+    clip: rect(0px,230px,110px,0px);
+}
   </style>
 </head>
 
@@ -71,20 +72,20 @@
       <div class="col-sm-3">
         <h3>CEPM</h3>
         <a href="http://www.veracruz.gob.mx/proteccioncivil/servicio/boletin-meteorologico/">
-                    <img src="http://www.veracruz.gob.mx/proteccioncivil/files/2011/08/PC.jpg" alt="SPCVer" style="float:left;">
+                    <img id="pc" src="http://www.veracruz.gob.mx/proteccioncivil/files/2011/08/PC.jpg" alt="SPCVer" style="float:left;" >
                 </a>
       </div>
       <div class="col-sm-9 text-justified">
         <h3 class="text-center">Quienes somos</h3>
-        <p class="text-justified">El <strong>Estado de Veracruz</strong> por su ubicación y extensión geográfica se ve afectado a lo largo del año, por distintos eventos meteorológicos, tanto de latitudes medias, frentes fríos, así como de latitudes tropicales, ondas tropicales y ciclones tropicales,
-          además de otro tipo de eventos meteorológicos como tormentas locales severas.
+        <p class="text-justified">El <strong>Estado de Veracruz</strong> por su ubicación y extensión geográfica se ve afectado a lo largo del año, por distintos eventos meteorológicos, tanto de latitudes medias, frentes fríos, así como de latitudes tropicales, ondas tropicales
+          y ciclones tropicales, además de otro tipo de eventos meteorológicos como tormentas locales severas.
           <p class="text-justified">Por tal razón la <strong>Secretaria de Protección Civil del Estado de Veracruz (SPC-Ver)</strong> creó la <strong>Coordinación del Centro de Estudios y Pronósticos Meteorológicos (CEPM)</strong>, cuyo objetivo principal es “vigilar las condiciones
             meteorológicas, climáticas y marítimas a corto, mediano y largo plazo con la finalidad de alertar a las autoridades estatales y municipales, así como al público en general”.</p>
           <p class="text-justified">El CEPM elabora durante los 365 días del año, diferentes pronósticos del tiempo adaptados a las necesidades de los sectores oficiales y particulares de Estado.</p>
           <p class="text-justified">Una aproximación mas detallada de los eventos meteorológicos que se presentan en el estado de Veracruz, se muestra a continuación.</p>
       </div>
       <br>
-      <div>
+      <div id="timetableMet">
         <h2 class="text-center">Calendario de Temporadas y Fenómenos Meteorológicos<br>para el Estado de Veracruz</h2>
         <div class="progress">
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:28%; background:#131212">Tipo de evento</div>
@@ -101,20 +102,23 @@
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6; color:#131212">Nov</div>
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6; color:#131212">Dic</div>
         </div>
-        <div class="progress">
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:28%; background:#c8c6c6; color:#131212">Frentes Frios</div>
+        <div class="progress" data-toggle="collapse" data-target="#ffrio">
+          <div class="progress-bar progress-bar-default" role="progressbar" style="width:28%; background:#c8c6c6; color:#131212">Frentes Fríos</div>
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:27%; background:#0092c8">15 de Mayo</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:3%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:3%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:21%; background:#0092c8">16 de Sepiembre</div>
+          <div class="progress-bar progress-bar-default" role="progressbar" style="width:3%;  background:#ebe6e6"></div>
+          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%;  background:#c8c6c6"></div>
+          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%;  background:#ebe6e6"></div>
+          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%;  background:#c8c6c6"></div>
+          <div class="progress-bar progress-bar-default" role="progressbar" style="width:3%;  background:#ebe6e6"></div>
+          <div class="progress-bar progress-bar-default" role="progressbar" style="width:21%; background:#0092c8">16 de Septiembre</div>
         </div>
-        <div class="progress">
+        <div id="ffrio" class="collapse">
+          <p>El periodo de Frentes Fríos y Nortes, comienza el 16 de Septiembre y finaliza el 15 de Mayo</p><br>
+        </div>
+        <div class="progress" data-toggle="collapse" data-target="#incedio">
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:28%; background:#c8c6c6; color:#131212">Incendios Forestales</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:3%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:33%; background:#c81e00">15 de Mayo al 30 Junio</div>
+          <div class="progress-bar progress-bar-default" role="progressbar" style="width:3%;  background:#ebe6e6"></div>
+          <div class="progress-bar progress-bar-default" role="progressbar" style="width:33%; background:#c81e00">15 de Enero al 30 Junio</div>
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
@@ -122,7 +126,10 @@
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
         </div>
-        <div class="progress">
+        <div id="incedio" class="collapse">
+          <p>El periodo de Incendios Forestales, comienza el 15 de Mayo y termina el 30 Junio</p><br>
+        </div>
+        <div class="progress" data-toggle="collapse" data-target="#estiaje">
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:28%; background:#c8c6c6; color:#131212">Estiaje</div>
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:24%; background:#c89600">1 de Febrero al 30 de Mayo</div>
@@ -134,8 +141,11 @@
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
         </div>
-        <div class="progress">
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:28%; background:#c8c6c6; color:#131212">Sequia Meteorologica</div>
+        <div id="estiaje" class="collapse">
+          <p>El periodo de Incendios Forestales, comienza el 1 de Febrero y termina el 30 de Mayo</p><br>
+        </div>
+        <div class="progress" data-toggle="collapse" data-target="#sequia">
+          <div class="progress-bar progress-bar-default" role="progressbar" style="width:28%; background:#c8c6c6; color:#131212">Sequía Meteorológica</div>
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
@@ -148,7 +158,10 @@
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
         </div>
-        <div class="progress">
+        <div id="sequia" class="collapse">
+          <p>En caso de que se presente, se considera los meses de Junio y Julio</p><br>
+        </div>
+        <div class="progress" data-toggle="collapse" data-target="#lluvia">
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:28%; background:#c8c6c6; color:#131212">Lluvias y CT's</div>
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
@@ -158,8 +171,11 @@
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:36%; background:#0056c8">1 de Junio al 30 de Noviembre</div>
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
         </div>
-        <div class="progress">
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:28%; background:#c8c6c6; color:#131212">Canicula</div>
+        <div id="lluvia" class="collapse">
+          <p>El periodo de Lluvias y Ciclones Tropicales, comienza el 1 de Junio y termina el 30 de Noviembre</p><br>
+        </div>
+        <div class="progress" data-toggle="collapse" data-target="#canicula">
+          <div class="progress-bar progress-bar-default" role="progressbar" style="width:28%; background:#c8c6c6; color:#131212">Canícula</div>
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
@@ -172,7 +188,10 @@
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
         </div>
-        <div class="progress">
+        <div id="canicula" class="collapse">
+          <p>La canicula se presenta de manera variable en el verano, entre los meses de Julio y Agosto</p><br>
+        </div>
+        <div class="progress" data-toggle="collapse" data-target="#surada">
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:28%; background:#c8c6c6; color:#131212">Suradas</div>
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:21%; background:#c800c0">15 de Diciembre al 15 de Abril</div>
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:3%; background:#ebe6e6"></div>
@@ -185,7 +204,10 @@
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c800c0">Diciembre</div>
         </div>
-        <div class="progress">
+        <div id="surada" class="collapse">
+          <p>Las Suradas se presentan de 15 de Diciembre al 15 de Abril</p><br>
+        </div>
+        <div class="progress" data-toggle="collapse" data-target="#gran">
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:28%; background:#c8c6c6; color:#131212">Granizadas</div>
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
@@ -197,7 +219,10 @@
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
         </div>
-        <div class="progress">
+        <div id="gran" class="collapse">
+          <p>Las Granizadas se presentan del 1 de Marzo al 30 de Junio, principalmente generadas por tormentas locales de gran desarrollo vertical</p><br>
+        </div>
+        <div class="progress" data-toggle="collapse" data-target="#hela">
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:28%; background:#c8c6c6; color:#131212">Heladas</div>
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:18%; background:#5200c8">31 de Marzo</div>
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
@@ -208,7 +233,9 @@
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
           <div class="progress-bar progress-bar-default" role="progressbar" style="width:18%; background:#5200c8">1 de Octubre </div>
         </div>
-
+        <div id="hela" class="collapse">
+          <p>Las Heladas se presentan del 1 de Octubre al 31 de Marzo</p><br>
+        </div>
       </div>
       <br>
     </div>
@@ -237,22 +264,22 @@
 
     <div class="tab-content">
       <div id="saul" class="tab-pane fade in active">
-        <img src="http://www.veracruz.gob.mx/proteccioncivil/files/2011/08/PC.jpg" alt="Coord" style="float:left;width:250px;height:96px;">
+        <img id="pc" src="http://www.veracruz.gob.mx/proteccioncivil/files/2011/08/PC.jpg" alt="Coord" style="float:left;width:250px;height:96px;">
         <h2>Dr. Saúl Miranda Alonso</h2>
         <p>Coordinador del Centro de Estudios y Pronósticos Meteorológicos</p>
       </div>
       <div id="jorge" class="tab-pane fade">
-        <img src="http://www.veracruz.gob.mx/proteccioncivil/files/2011/08/PC.jpg" alt="InvCli" style="float:left;width:250px;height:96px;">
+        <img id="pc" src="http://www.veracruz.gob.mx/proteccioncivil/files/2011/08/PC.jpg" alt="InvCli" style="float:left;width:250px;height:96px;">
         <h2>M.C. Jorge Humberto Bravo Méndez</h2>
         <p>Investigador del Clima y Administrador del sitio web</p>
       </div>
       <div id="fedec" class="tab-pane fade">
-        <img src="http://www.veracruz.gob.mx/proteccioncivil/files/2011/08/PC.jpg" alt="SubCoo" style="float:left;width:250px;height:96px;">
+        <img id="pc" src="http://www.veracruz.gob.mx/proteccioncivil/files/2011/08/PC.jpg" alt="SubCoo" style="float:left;width:250px;height:96px;">
         <h2>L.C.A Federico Acevedo Rosas</h2>
         <p>Subcoordinador de Pronóstico Estacional y Meteorológico</p>
       </div>
       <div id="pepe" class="tab-pane fade">
-        <img src="http://www.veracruz.gob.mx/proteccioncivil/files/2011/08/PC.jpg" alt="SubCoo" style="float:left;width:250px;height:96px;">
+        <img id="pc"src="http://www.veracruz.gob.mx/proteccioncivil/files/2011/08/PC.jpg" alt="SubCoo" style="float:left;width:250px;height:96px;">
         <h2>L.C.A Jose Llanos Arias</h2>
         <p>Subcoordinador de Fenómenos Atmosféricos</p>
       </div>
