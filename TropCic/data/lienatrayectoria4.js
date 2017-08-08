@@ -1,0 +1,1 @@
+var json_lienatrayectoria4 = {"type":"FeatureCollection","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},"features":[{"type":"Feature","properties":{"STORMNAME":"Franklin"},"geometry":{"type":"LineString","coordinates":[[-89.1,19.5],[-90.2,19.7],[-92.4,20.1],[-94.4,20.3],[-96.6,20.2],[-101.8,19.7]]}}]}
