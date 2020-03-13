@@ -64,8 +64,10 @@
         var img_id = "anim_img";
         var slider_id = "anim_frame_slider";
         var loop_select_id = "loop_select";
-        for (var i = 0; i < 73; i++) {
-            frames[i] = "https://dl.dropboxusercontent.com/s/" + fPREC[i] + "/img_" + ("0" + (i + 0)).slice(-2) + ".png";
+        fts_img = 0;
+        lst_img = fPREC.length;
+        for (var i = fts_img; i < lst_img; i++) {
+            frames[i] = "https://dl.dropboxusercontent.com/s/" + fPREC[i];
             /*frames[i] = "file:///home/jbwrf/Dropbox/frames/" + folder + "/img_" + ("0" + (i + 0)).slice(-2) + ".png"; */
         }
         anim = new Animation(frames, img_id, slider_id, loop_select_id);
