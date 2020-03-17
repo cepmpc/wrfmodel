@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>WRF-TEMP2m</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <!-- Edistado por Jorge Bravo-->
+    <!-- Esto de de JSAnimation Python se paso a la carpeta: js en el archivo JSAnim_py.js-->
+    <script src="js/JSAnim_py.js"></script>
+    <script src="js/anim_vars.js"></script>
+    <!-- Esto de de JSAnimation Python se paso a la carpeta: css en el archivo JSAnimation.css-->
+    <!--  -->
+    <link rel="stylesheet" href="css/jsAnimation.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="container">
+                    <br>
+                    <h4>Desplazador de tiempo</h4>
+                    <input id="anim_frame_slider" type="range" style="width:220px" name="points" min="0" max="1" step="1" value="0" onchange="anim.set_frame(parseInt(this.value));"></input>
+                    <br>
+                    <h4>Tipo de animación</h4>
+                    <form action="#n" name="loop_select" class="anim_control">
+                        <label class="radio-inline"><input type="radio" name="state" value="once">Once</label>
+                        <label class="radio-inline"><input type="radio" name="state" value="loop" checked>Loop</label>
+                        <label class="radio-inline"><input type="radio" name="state" value="reflect">Reflect</label>
+                    </form>
+                    <br>
+                    <div class="">
+                        <h4>Controles de la animación</h4>
+                        <button type="button" class="btn btn-primary btn-xs" onclick="anim.first_frame()">       <span class="glyphicon glyphicon-fast-backward"></span></button>
+                        <button type="button" class="btn btn-primary btn-xs" onclick="anim.previous_frame()">    <span class="glyphicon glyphicon-step-backward"></span></button>
+                        <button type="button" class="btn btn-primary btn-xs" onclick="anim.reverse_animation()"> <span class="glyphicon glyphicon-triangle-left"></span></button>
+                        <button type="button" class="btn btn-primary btn-xs" onclick="anim.pause_animation()">   <span class="glyphicon glyphicon-pause"></span></button>
+                        <button type="button" class="btn btn-primary btn-xs" onclick="anim.play_animation()">    <span class="glyphicon glyphicon-triangle-right"></span></button>
+                        <button type="button" class="btn btn-primary btn-xs" onclick="anim.next_frame()">        <span class="glyphicon glyphicon-step-forward"></span></button>
+                        <button type="button" class="btn btn-primary btn-xs" onclick="anim.last_frame()">        <span class="glyphicon glyphicon-fast-forward"></span></button>
+                    </div>
+                    <br>
+                    <div class="">
+                        <h4>Velocidad de la animación</h4>
+                        <button type="button" class="btn btn-primary btn-xs" onclick="anim.slower()"><span class="glyphicon glyphicon-minus-sign"></span></button>
+                        <button type="button" class="btn btn-primary btn-xs" onclick="anim.faster()"><span class="glyphicon glyphicon-plus-sign"></span></i></button>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <img class="img-responsive" id="anim_img">
+            </div>
+        </div>
+    </div>
+
+    <script language="javascript">
+        /*  */
+        var img_id = "anim_img";
+        var slider_id = "anim_frame_slider";
+        var loop_select_id = "loop_select";
+        fts_img = 0;
+        lst_img = fWIND500.length;
+        for (var i = fts_img; i < lst_img; i++) {
+            frames[i] = "https://dl.dropboxusercontent.com/s/" + fWIND500[i];
+            /*frames[i] = "file:///home/jbwrf/Dropbox/frames/" + folder + "/img_" + ("0" + (i + 0)).slice(-2) + ".png"; */
+        }
+        anim = new Animation(frames, img_id, slider_id, loop_select_id);
+    </script>
+
+</body>
+
+</html>
+<!--
+http://stackoverflow.com/questions/2385203/can-you-control-gif-animation-with-javascript
+https://github.com/buzzfeed/libgif-js
+https://dl.dropboxusercontent.com/s/l5mlhv9a8u0h9mb/img_alva.csv
+https://www.dropbox.com/s/l5mlhv9a8u0h9mb/img_alva.csv?dl=0
+-->
