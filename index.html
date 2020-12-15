@@ -3,7 +3,7 @@
 
 <head>
   <!-- Theme Made By www.w3schools.com - No Copyright -->
-  <title>CEPM Inicio</title>
+  <title>CEPM WRF</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -12,45 +12,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-
-  <link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.css" />
-  <script src="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.js"></script>
-
   <link rel="stylesheet" href="css/main.css" />
-  <style>
-    table,
-    th,
-    td {
-      border: 1px solid black;
-      border-collapse: collapse;
-      text-align: center;
-    }
-
-    th,
-    td {
-      padding: 1px;
-    }
-  </style>
 </head>
 
 <body>
-  <div class="jumbotron text-center">
-    <p><b>Secretaría de Protección Civil</b></p>
-    <p><b>Centro de Estudios y Pronósticos Meteorológicos</b></p>
-  </div>
 
-  <div class="row">
-    <div class="col-sm-2"></div>
-    <div class="col-sm-8">
-      <div class="topnav" id="myTopnav">
-        <a href="index.html">Inicio</a>
-        <a href="index_WRF.html">WRF</a>
-        <a href="index_Clima.html">Clima</a>
-        <a href="TropCic/index.html">Ciclón Tropical</a>
-        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-      </div>
-    </div>
-    <div class="col-sm-2"></div>
+  <div class="jumbotron text-center">
+    <h1>CEPM - SPCVer</h1>
+    <p>Centro de Estudios y Pronósticos Meteorológicos</p>
+    <p>de la Secretaría de Protección Civil</p>
   </div>
 
   <script>
@@ -63,257 +33,129 @@
       }
     }
   </script>
-
+  <br>
+  <!-- Container (The Band Section) -->
   <div class="container">
-    <div class="row">
-      <div class="col-sm-3">
-        <h3>CEPM</h3>
-        <a href="http://www.veracruz.gob.mx/proteccioncivil/servicio/boletin-meteorologico/">
-                    <img src="http://www.veracruz.gob.mx/proteccioncivil/wp-content/uploads/sites/5/2018/11/pc.png" alt="SPCVer" style="float:left;" >
-
-                </a>
+    <div class="btn-group btn-group-justified">
+      <!-- Boton 1: es para la Descripción-->
+      <a href="iframe_WRF_index.html" target="search_iframe" style="background:#dddddd" class="btn btn-default" role="button"><span class="glyphicon glyphicon-home"></span></a>
+      <!-- Grupo Boton 2: es para la Temperatura-->
+      <div class="btn-group">
+        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" title="Temperatura">Temp<span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li class="dropdown-header">Superficie</li>
+          <li><a href="iframe_WRF_TEMP.html" target="search_iframe">Temp2m <span class="glyphicon glyphicon-ok-circle"  style="color:blue"></span></a></li>
+          <li class="disabled"><a href="#">DewPoint <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+          <li class="divider"></li>
+          <li class="dropdown-header">Niveles</li>
+          <li class="disabled"><a href="#">850 mb <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+          <li class="disabled"><a href="#">700 mb <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+          <li class="disabled"><a href="#">500 mb <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+          <li class="disabled"><a href="#">250 mb <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+          <li class="divider"></li>
+        </ul>
       </div>
-      <div class="col-sm-9 text-justified">
-        <h3 style="text-align: center;">Quienes somos</h3>
-        <p style="text-align: justify;">El <strong>Estado de Veracruz</strong> por su ubicación y extensión geográfica se ve afectado a lo largo del año, por distintos eventos meteorológicos, tanto de latitudes medias, frentes fríos, así como de latitudes tropicales, ondas tropicales
-          y ciclones tropicales, además de otro tipo de eventos meteorológicos como tormentas locales severas.</p>
-        <p style="text-align: justify;">Por tal razón la <strong>Secretaria de Protección Civil del Estado de Veracruz (SPC-Ver)</strong> creó la <strong>Coordinación</strong> del <strong>Centro de Estudios y Pronósticos Meteorológicos (CEPM)</strong>, cuyo objetivo principal es “vigilar
-          las condiciones meteorológicas, climáticas y marítimas a corto, mediano y largo plazo con la finalidad de alertar a las autoridades estatales y municipales, así como al público en general”.</p>
-        <p style="text-align: justify;">El CEPM elabora durante los 365 días del año, diferentes pronósticos del tiempo adaptados a las necesidades de los sectores oficiales y particulares de Estado.</p>
-        <p style="text-align: justify;">Una aproximación mas detallada de los eventos meteorológicos que se presentan en el estado de Veracruz, se muestra a continuación.</p>
+      <!-- Grupo Boton 3: es para la Precipitacion-->
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" title="Precipitación">Prec<span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li class="dropdown-header">Integrado</li>
+          <li><a href="iframe_WRF_PREC.html" target="search_iframe">Cada hora <span class="glyphicon glyphicon-ok-circle"  style="color:blue"></span></a></li>
+          <li><a href="iframe_WRF_PRECA.html" target="search_iframe">Acumulada <span class="glyphicon glyphicon-ok-circle"  style="color:blue"></span></a></li>
+          <li><a href="iframe_WRF_PRECT.html" target="search_iframe">Acumulada Total<span class="glyphicon glyphicon-ok-circle"  style="color:blue"></span></a></li>          
+          <li class="divider"></li>
+          <li class="dropdown-header">Reflectividad</li>
+          <li><a href="iframe_WRF_MDBZ.html" target="search_iframe">dBz <span class="glyphicon glyphicon-ok-circle"  style="color:blue"></span></a></li>
+          <li class="divider"></li>
+        </ul>
       </div>
-      <br>
-      <div id="timetableMet">
-        <h2 class="text-center">Calendario de Temporadas y Fenómenos Meteorológicos<br>para el Estado de Veracruz</h2>
-        <div class="progress">
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:28%; background:#131212">Tipo de evento</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6; color:#131212">Ene</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6; color:#131212">Feb</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6; color:#131212">Mar</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6; color:#131212">Abr</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6; color:#131212">May</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6; color:#131212">Jun</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6; color:#131212">Jul</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6; color:#131212">Ago</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6; color:#131212">Sep</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6; color:#131212">Oct</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6; color:#131212">Nov</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6; color:#131212">Dic</div>
-        </div>
-        <div class="progress" data-toggle="collapse" data-target="#ffrio">
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:28%; background:#c8c6c6; color:#131212">Frentes Fríos</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:27%; background:#0092c8">15 de Mayo</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:3%;  background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%;  background:#c8c6c6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%;  background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%;  background:#c8c6c6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:3%;  background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:21%; background:#0092c8">16 de Septiembre</div>
-        </div>
-        <div id="ffrio" class="collapse">
-          <p>El periodo de Frentes Fríos y Nortes, comienza el 16 de Septiembre y finaliza el 15 de Mayo</p><br>
-        </div>
-        <div class="progress" data-toggle="collapse" data-target="#incedio">
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:28%; background:#c8c6c6; color:#131212">Incendios Forestales</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:3%;  background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:33%; background:#c81e00">15 de Enero al 30 Junio</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-        </div>
-        <div id="incedio" class="collapse">
-          <p>El periodo de Incendios Forestales, comienza el 15 de Mayo y termina el 30 Junio</p><br>
-        </div>
-        <div class="progress" data-toggle="collapse" data-target="#estiaje">
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:28%; background:#c8c6c6; color:#131212">Estiaje</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:24%; background:#c89600">1 de Febrero al 30 de Mayo</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-        </div>
-        <div id="estiaje" class="collapse">
-          <p>El periodo de Incendios Forestales, comienza el 1 de Febrero y termina el 30 de Mayo</p><br>
-        </div>
-        <div class="progress" data-toggle="collapse" data-target="#sequia">
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:28%; background:#c8c6c6; color:#131212">Sequía Meteorológica</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:12%; background:#c80000;">Junio y Julio</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-        </div>
-        <div id="sequia" class="collapse">
-          <p>En caso de que se presente, se considera los meses de Junio y Julio</p><br>
-        </div>
-        <div class="progress" data-toggle="collapse" data-target="#lluvia">
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:28%; background:#c8c6c6; color:#131212">Lluvias y CT's</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:36%; background:#0056c8">1 de Junio al 30 de Noviembre</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-        </div>
-        <div id="lluvia" class="collapse">
-          <p>El periodo de Lluvias y Ciclones Tropicales, comienza el 1 de Junio y termina el 30 de Noviembre</p><br>
-        </div>
-        <div class="progress" data-toggle="collapse" data-target="#canicula">
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:28%; background:#c8c6c6; color:#131212">Canícula</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:12%; background:#c86000">Variable</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-        </div>
-        <div id="canicula" class="collapse">
-          <p>La canicula se presenta de manera variable en el verano, entre los meses de Julio y Agosto</p><br>
-        </div>
-        <div class="progress" data-toggle="collapse" data-target="#surada">
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:28%; background:#c8c6c6; color:#131212">Suradas</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:21%; background:#c800c0">15 de Diciembre al 15 de Abril</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:3%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c800c0">Diciembre</div>
-        </div>
-        <div id="surada" class="collapse">
-          <p>Las Suradas se presentan de 15 de Diciembre al 15 de Abril</p><br>
-        </div>
-        <div class="progress" data-toggle="collapse" data-target="#gran">
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:28%; background:#c8c6c6; color:#131212">Granizadas</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:24%; background:#00bcc8">1 de Marzo al 30 de Junio</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-        </div>
-        <div id="gran" class="collapse">
-          <pre>Las Granizadas se presentan del 1 de Marzo al 30 de Junio, principalmente generadas por tormentas locales de gran desarrollo vertical</pre><br>
-        </div>
-        <div class="progress" data-toggle="collapse" data-target="#hela">
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:28%; background:#c8c6c6; color:#131212">Heladas</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:18%; background:#5200c8">31 de Marzo</div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#ebe6e6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:6%; background:#c8c6c6"></div>
-          <div class="progress-bar progress-bar-default" role="progressbar" style="width:18%; background:#5200c8">1 de Octubre </div>
-        </div>
-        <div id="hela" class="collapse">
-          <p>Las Heladas se presentan del 1 de Octubre al 31 de Marzo</p><br>
-        </div>
+      <!-- Grupo Boton 4: -->
+      <div class="btn-group">
+        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Viento<span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li class="dropdown-header">Superficie</li>
+          <li><a href="iframe_WRF_WIND.html" target="search_iframe">Viento 10m <span class="glyphicon glyphicon-ok-circle" style="color:blue"></span></a></li>
+          <li class="divider"></li>
+          <li class="dropdown-header">Niveles</li>
+          <li><a href="iframe_WRF_WIND850.html" target="search_iframe">850 mb <span class="glyphicon glyphicon-ok-circle"  style="color:blue"></span></a></li>
+          <li><a href="iframe_WRF_WIND700.html" target="search_iframe">700 mb <span class="glyphicon glyphicon-ok-circle"  style="color:blue"></span></a></li>
+          <li><a href="iframe_WRF_WIND500.html" target="search_iframe">500 mb <span class="glyphicon glyphicon-ok-circle"  style="color:blue"></span></a></li>
+          <li><a href="iframe_WRF_WIND250.html" target="search_iframe">250 mb <span class="glyphicon glyphicon-ok-circle"  style="color:blue"></span></a></li>
+          <li class="divider"></li>
+        </ul>
       </div>
-      <br>
-    </div>
-    <br>
-    <div class="row">
-      <div class="col-md-4">
-        <h3 class="text-center">Información de Contacto</h3>
-
-        <div class="">
-          <p><span class="glyphicon glyphicon-map-marker"></span> Xalapa, Ver, Mex</p>
-          <p><span class="glyphicon glyphicon-earphone"></span> (+52) 01 228 1.41.45.23</p>
-          <p><span class="glyphicon glyphicon-earphone"></span> (+52) 01 228 1.41.45.38</p>
-          <p><span class="glyphicon glyphicon-earphone"></span> (+52) 01 228 8.18.68.12</p>
-          <p><span class="glyphicon glyphicon-envelope"></span> cepm.pc@gmail.com</p>
-        </div>
-
-        <div class="">
-          <h3 class="text-center">¿A quién puedes dirigirte?</h3>
-          <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#saul">Saúl</a></li>
-            <li><a data-toggle="tab" href="#jorge">Jorge</a></li>
-            <li><a data-toggle="tab" href="#fedec">Federico</a></li>
-            <li><a data-toggle="tab" href="#pepe">Llanos</a></li>
-          </ul>
-
-          <div class="tab-content">
-            <div id="saul" class="tab-pane fade in active">
-
-              <h2>Dr. Saúl Miranda Alonso</h2>
-              <p>Coordinador del Centro de Estudios y Pronósticos Meteorológicos</p>
-            </div>
-            <div id="jorge" class="tab-pane fade">
-
-              <h2>M.C. Jorge Humberto Bravo Méndez</h2>
-              <p>Investigador del Clima y Administrador del sitio web</p>
-            </div>
-            <div id="fedec" class="tab-pane fade">
-
-              <h2>L.C.A Federico Acevedo Rosas</h2>
-              <p>Subcoordinador de Pronóstico Estacional y Meteorológico</p>
-            </div>
-            <div id="pepe" class="tab-pane fade">
-
-              <h2>L.C.A Jose Llanos Arias</h2>
-              <p>Subcoordinador de Fenómenos Atmosféricos</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="">
-          <h3 class="text-center">Ubicación</h3>
-          <div id="leafletMap" style="width: 100%; height: 600px;"></div>
-        </div>
+      <!-- Grupo Boton 5: -->
+      <div class="btn-group">
+        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">Otras<span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li class="dropdown-header">Radiación</li>
+          <li class="disabled"><a href="#">Onda Corta <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+          <li class="disabled"><a href="#">Onda Larga <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+          <li class="divider"></li>
+          <li class="dropdown-header">Indices</li>
+          <li class="disabled"><a href="#">---</a></li>
+          <li class="disabled"><a href="#">---</a></li>
+          <li class="disabled"><a href="#">---</a></li>
+          <li class="disabled"><a href="#">---</a></li>
+          <li class="divider"></li>
+        </ul>
       </div>
-      <div class="col-md-8">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdiwmAJ6qjqjb43ku3cIOli4N2VdDOyaVmvjUvM9RhfOHl93A/viewform?embedded=true" width="760" height="1050" frameborder="0" marginheight="0" marginwidth="0">Cargando...</iframe>
+      <!-- Grupo Boton 6: -->
+      <div class="btn-group">
+        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" title="Meteogramas">Meteogr<span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li class="dropdown-header">Observatorios</li>
+          <li class="disabled"><a href="#">Tuxpam <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+          <li class="disabled"><a href="#">Xalapa <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+          <li class="disabled"><a href="#">Veracruz <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+          <li class="disabled"><a href="#">Orizaba <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+          <li class="disabled"><a href="#">Coatzacoalcos <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+          <li class="divider"></li>
+          <li class="dropdown-header">Ciudad Referencia</li>
+          <li class="disabled"><a href="#">Panuco <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+          <li class="disabled"><a href="#">Chicontepec <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+          <li class="disabled"><a href="#">Huayacocotla <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+          <li class="disabled"><a href="#">Poza Rica <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+          <li class="disabled"><a href="#">Tecolutla <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+          <li class="disabled"><a href="#">Mtz de la Tore <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+          <li class="disabled"><a href="#">Perote <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+          <li class="disabled"><a href="#">Zongolica <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+          <li class="disabled"><a href="#">Alvarado <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+          <li class="disabled"><a href="#">Angle R. Cabada <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+          <li class="disabled"><a href="#">Azueta <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+          <li class="disabled"><a href="#">Las Choapas <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+          <li class="disabled"><a href="#">Uxpanapa <span class="glyphicon glyphicon-remove-circle" style="color:red"></span></a></li>
+          <li class="divider"></li>
+        </ul>
       </div>
     </div>
     <br>
-
+    <div class="row">
+      <div class="col-sm-12 text-justified">
+        <!--
+                <iframe class="embed-responsive-item" src="iframe_WRF_index.html" height="1010px" width="100%" style="border:none;" frameborder="0" allowfullscreen name="search_iframe"></iframe>
+                -->
+        <iframe class="embed-responsive-item" src="iframe_WRF_index.html" onload="this.style.height=this.contentDocument.body.scrollHeight +'px';" width="100%" style="border:none;" frameborder="0" allowfullscreen name="search_iframe"></iframe>
+      </div>
+    </div>
   </div>
 
-  <!-- Add leaflet Maps -->
   <script>
-    var map = L.map('leafletMap').setView([19.508628, -96.871454], 14);
-    mapLink =
-      '<a href="http://openstreetmap.org">OpenStreetMap</a>';
-    L.tileLayer(
-      'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: 'Map data &copy; ' + mapLink,
-        maxZoom: 18,
-      }).addTo(map);
-    var marker = L.marker([19.508628, -96.871454])
-      .addTo(map)
-      .bindPopup("<b>Secretaría de Protección Civil</b><br>Torre Corporativa Olmo, piso 6 y 7, que se ubica en Distribuidor Vial No. 1009, Col. Reserva Territorial,<br>C.P. 91096, Xalapa, Ver.")
-      .openPopup();
+    function go(loc) {
+      document.getElementById('calendar').src = loc;
+    }
   </script>
   <!-- <iframe src="iframe_WRF_TEMP.html" style="border:none;" height="100%" width="100%" frameborder="0" allowfullscreen></iframe> -->
+  <div class="container">
+    <div class="alert alert-danger">
+      <strong>Aviso Importante!</strong> Los mapas aquí mostrados, son generados con <a href="#" class="alert-link">datos que se encuentran en fase experimental y en proceso de validación</a>.
+    </div>
+    <div class="alert alert-info">
+      <strong>Información!</strong> Este sitio <a href="#" class="alert-link">estará en actualización continua</a>.
+    </div>
+  </div>
   <!-- Footer -->
-  <footer class="text-center" style="background:#c8c6c6">
+  <footer class="text-center" style="background:#dddddd">
     <br>
     <p>¡Síguenos en nuestras redes sociales!</p>
     <br>
@@ -322,7 +164,7 @@
                 <img src="https://www.facebook.com/images/fb_icon_325x325.png" alt="facebook" style="width:25px;height:25px">
             </a>
       <a target="_blank" href="https://twitter.com/spcver">
-                <img src="https://abs.twimg.com/errors/logo23x19.png" alt="twitter" style="width:25px;height:25px;">
+                <img src="https://abs.twimg.com/favicons/favicon.ico" alt="twitter" style="width:25px;height:25px;">
             </a>
       <a target="_blank" href="http://meteorologiaspcver.blogspot.mx/">
                 <img src="https://www.blogger.com/about/favicon/apple-touch-icon-57x57.png" alt="blogger" style="width:25px;height:25px;">
